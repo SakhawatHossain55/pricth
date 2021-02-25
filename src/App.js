@@ -3,20 +3,20 @@ import './App.css';
 import { useEffect, useState } from 'react';
 
 function App() {
-  const [frends, setFrends] =  useState([])
+  const [friends, setFriends] =  useState([])
   useEffect(() =>{
     fetch(`https://randomuser.me/api/?results=500`)
     .then(res => res.json())
-    .then(data => setFrends(data.results)) 
+    .then(data => setFriends(data.results)) 
   }, [])
   
-  // const frends = [{name: 'Robin', age: 20}, {name: 'Titu', age: 23}, {name: 'Riyad', age: 20}, {name: 'Shadon', age: 23}, {name: 'Robin Hasan', age: 20}, {name: 'Sojib Khan', age: 24}]
+  // const friends = [{name: 'Robin', age: 20}, {name: 'Titu', age: 23}, {name: 'Riyad', age: 20}, {name: 'Shadon', age: 23}, {name: 'Robin Hasan', age: 20}, {name: 'Sojib Khan', age: 24}]
   return (
 
     <div className="App">
       <MovieCounter></MovieCounter>
     {
-      frends.map(fr => <Frend name={fr.location.street.name} email={fr.email} gender={fr.gender} country={fr.location.country}></Frend>)
+      friends.map(fr => <Friend name={fr.location.street.name} email={fr.email} gender={fr.gender} country={fr.location.country}></Frend>)
     }  
     </div>
   );
@@ -41,15 +41,15 @@ function MovieDisplay(props){
     </div>
   )
 }
-function Frend(props){
-  const frendStyle={
+function Friend(props){
+  const friendStyle={
     border: '2px solid green',
     margin: '10px',
     width: '400px'
     
   }
   return(
-    <div style={frendStyle}>
+    <div style={friendStyle}>
       <h1>Student : {props.name}</h1>
       <p>Email : {props.email}</p>
       <p>Gender : {props.gender}</p>
