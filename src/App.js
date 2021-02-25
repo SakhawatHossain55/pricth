@@ -16,7 +16,7 @@ function App() {
     <div className="App">
       <MovieCounter></MovieCounter>
     {
-      friends.map(fr => <Friend name={fr.location.street.name} email={fr.email} gender={fr.gender} country={fr.location.country}></Frend>)
+      friends.map(fr => <Friend name={fr.location.street.name} email={fr.email} gender={fr.gender} country={fr.location.country}></Friend>)
     }  
     </div>
   );
